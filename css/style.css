@@ -34,7 +34,6 @@ html {
 div[class$=__container] {
   width: 100%;
   max-width: 1490px;
-  height: inherit;
   margin-inline: auto;
   padding-inline: 25px;
 }
@@ -93,6 +92,7 @@ address {
 }
 
 .header__logo-img {
+  scale: 1.3;
   height: 66.75px;
 }
 
@@ -133,9 +133,10 @@ address {
 }
 
 .intro {
+  padding-top: 85px;
   width: 100%;
   height: 100dvh;
-  min-height: 560px;
+  min-height: 620px;
   background: center/cover no-repeat url("../img/intro_bg.jpg");
 }
 
@@ -144,7 +145,6 @@ address {
   align-items: center;
   justify-content: center;
   font-family: "Roboto", "Arial", sans-serif;
-  min-height: 560px;
 }
 
 .intro__content {
@@ -152,7 +152,6 @@ address {
   border-radius: 35px;
   width: 100%;
   max-width: 600px;
-  padding-block: 40px;
   padding-inline: 35px;
   align-items: center;
   gap: 20px;
@@ -164,6 +163,16 @@ address {
   width: 100%;
 }
 
+.intro__img-wrapper {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+}
+.intro__img-wrapper img {
+  width: 75px;
+}
+
 .intro__title {
   margin: 0;
   color: #172a57;
@@ -173,12 +182,12 @@ address {
 }
 @media (max-width: 767px) {
   .intro__title {
-    font-size: calc(18px + 30.6 * ((100vw - 320) / 1490));
+    font-size: calc(16px + 34 * ((100vw - 320) / 1490));
   }
 }
 @media (min-width: 315px) {
   .intro__title {
-    font-size: calc(18px + 18 * (100vw / 1490));
+    font-size: calc(16px + 20 * (100vw / 1490));
   }
 }
 
@@ -559,14 +568,12 @@ address {
 
 .carousel {
   width: 100%;
-  height: 380px;
+  height: 250px;
   position: relative;
 }
 
-.carousel > ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.carousel__items {
+  height: 100%;
 }
 
 .slide {
@@ -576,7 +583,6 @@ address {
   padding-inline: 50px;
   transition: 200ms opacity ease-in-out;
   transition-delay: 200ms;
-  height: 100%;
 }
 
 .slide > img {
@@ -788,6 +794,9 @@ address {
   .team__items {
     gap: 30px;
   }
+  .carousel {
+    height: 250px;
+  }
 }
 @media (max-width: 1168px) {
   #form {
@@ -807,13 +816,13 @@ address {
   .feedback__items {
     justify-content: center;
   }
+  .carousel {
+    height: 250px;
+  }
 }
 @media (max-width: 768px) {
   div[class$=__container] {
     padding-inline: 15px;
-  }
-  .header__logo-img {
-    width: 75px;
   }
   .header__nav {
     display: none;
@@ -821,22 +830,34 @@ address {
   .contacts__link {
     max-width: 204px;
   }
+  #form .row button {
+    width: 100%;
+  }
   .footer, .reviews, .partners, .team, .feedback, .services {
     margin-top: 40px;
   }
+  .carousel {
+    height: 300px;
+  }
 }
 @media (max-width: 480px) {
+  div[class$=__container] {
+    padding-inline: 5px;
+  }
   .intro {
     background: #fff;
-  }
-  .intro__container {
-    padding-top: 50px;
+    height: 100%;
   }
   .intro__content {
+    padding-inline: 10px;
     border: none;
+    background-color: transparent;
   }
   .intro__img {
     display: block;
+  }
+  .intro__img-wrapper {
+    display: flex;
   }
   .services__title {
     width: 100%;
@@ -857,6 +878,12 @@ address {
     gap: 20px;
   }
   .carousel {
-    height: 530px;
+    height: 450px;
+  }
+  .contacts__link-adress {
+    text-align: center;
+  }
+  .footer__container {
+    padding-top: 30px;
   }
 }/*# sourceMappingURL=style.css.map */

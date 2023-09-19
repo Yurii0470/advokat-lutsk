@@ -69,7 +69,7 @@ html
 div[class$='__container']
   width: 100%
   max-width: 1490px
-  height: inherit
+  // height: inherit
   margin-inline: auto
   padding-inline: 25px
 
@@ -117,6 +117,7 @@ address
 .header__logo
 
 .header__logo-img
+  scale: 1.3
   height: 66.75px
 
 .header__nav
@@ -159,9 +160,10 @@ address
 // ===== INTRO START ===== //
 
 .intro
+  padding-top: 85px
   width: 100%
   height: 100dvh
-  min-height: 560px
+  min-height: 620px
   background: center / cover no-repeat url('../img/intro_bg.jpg')
 
 .intro__container
@@ -169,14 +171,14 @@ address
   align-items: center
   justify-content: center
   font-family: $ff
-  min-height: 560px
+  // min-height: 560px
 
 .intro__content
   border: 2px solid $blue
   border-radius: 35px
   width: 100%
   max-width: 600px
-  padding-block: 40px
+  // padding-block: 40px
   padding-inline: 35px
   align-items: center
   gap: 20px
@@ -186,10 +188,18 @@ address
   display: none
   width: 100%
 
+.intro__img-wrapper
+  width: 100%
+  display: none
+  align-items: center
+  justify-content: space-around
+  & img
+    width: 75px
+
 .intro__title
   margin: 0
   color: $blue
-  @include adapt-font(36, 18)
+  @include adapt-font(36, 16)
   font-weight: 700
   letter-spacing: 1px
   text-align: center
@@ -523,15 +533,11 @@ address
 //
 .carousel 
   width: 100%
-  height: 380px
+  height: 250px
   position: relative
 
-
-.carousel > ul 
-  margin: 0
-  padding: 0
-  list-style: none
-
+.carousel__items
+  height: 100%
 
 .slide 
   position: absolute
@@ -540,7 +546,7 @@ address
   padding-inline: 50px
   transition: 200ms opacity ease-in-out
   transition-delay: 200ms
-  height: 100%
+  // height: 100%
 
 
 .slide > img 
@@ -585,8 +591,6 @@ address
 
 .slide-items
   flex: 0 0 100%
-
-
 
 .slide-item
   font-family: $ff
@@ -722,6 +726,8 @@ address
 @media (max-width: 1200px) 
   .team__items
     gap: 30px
+  .carousel 
+    height: 250px
   
 
 @media (max-width: 1168px) 
@@ -738,30 +744,49 @@ address
     gap: 50px
   .feedback__items
     justify-content: center
+  .carousel 
+    height: 250px
 
 @media (max-width: 768px) 
   div[class$='__container']
     padding-inline: 15px
-  .header__logo-img
-    width: 75px
+  // .header__logo-img
+  //   width: 75px
   .header__nav
     display: none
   .contacts__link
     max-width: 204px
+  #form 
+    & .row
+      & button
+        width: 100%
 
   .footer, .reviews, .partners, .team, .feedback, .services
     margin-top: 40px
+  .carousel 
+    height: 300px
 
 
 @media (max-width: 480px) 
+  div[class$='__container']
+    padding-inline: 5px
+  .header__logo-img
+    
   .intro
     background: #fff
+    height: 100%
   .intro__container
-    padding-top: 50px
+    // height: 100%
+    // padding-top: 100px
   .intro__content
+    // margin-top: 100px
+    padding-inline: 10px
     border: none
+    background-color: transparent
   .intro__img
     display: block
+  .intro__img-wrapper
+    display: flex
   .services__title
     width: 100%
 
@@ -780,4 +805,8 @@ address
     & .row
       gap: 20px
   .carousel 
-    height: 530px
+    height: 450px
+  .contacts__link-adress
+    text-align: center
+  .footer__container
+    padding-top: 30px
