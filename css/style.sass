@@ -1,0 +1,781 @@
+*, *::before, *::after
+  margin: 0
+  padding: 0
+  border: 0
+  box-sizing: border-box
+
+a 
+  text-decoration: none
+
+ul, li, ol 
+  list-style: none
+
+img
+  vertical-align: top
+
+h1, h2, h3, h4, h5, h6 
+  font-weight: inherit
+  font-size: inherit
+
+html, body 
+  height: 100%
+  line-height: 1
+
+// TO %
+@function prc($pxOne, $pxTwo) 
+  $result: ($pxOne / $pxTwo) * 100%
+  @return $result
+
+// TO REM
+@function rem($px) 
+  $result: ($px / 16) + rem
+  @return $result
+
+// TO EM
+@function em($px) 
+  $result: ($px / 16) + em
+  @return $result
+
+// ---------- Адаптив тевсту ---------- //
+$maxWidth: 1490// значення без PX
+@mixin adapt-font($pcSize, $mobSize)
+  $addSize: $pcSize - $mobSize
+  $addMobSize: $addSize + $addSize * 0.7
+  @media (max-width: 767px) 
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320) / #{$maxWidth}))
+  @media (min-width: 315px) 
+    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}))
+
+//------ Для виклику значення @include adapt-font(18, 16)-------- //
+
+
+
+//---- variables -----///
+
+$blue: #172a57
+$white: #fff
+$dark: #333
+$roboto: 'Roboto', sans-serif
+$arial: 'Arial', sans-serif
+$ff: 'Roboto', 'Arial', sans-serif
+
+// img
+//   width: 100px
+
+
+html
+  scroll-behavior: smooth
+
+div[class$='__container']
+  width: 100%
+  max-width: 1490px
+  height: inherit
+  margin-inline: auto
+  padding-inline: 25px
+
+h3[class$='__title'], .address__title, .form__title
+  text-align: center
+  font-family: $ff
+  @include adapt-font(42, 30)
+  color: $blue
+  font-weight: 700
+
+
+.column
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  flex-wrap: wrap
+
+.row
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  flex-wrap: wrap
+  
+body
+  position: relative
+
+address
+  font-style: normal
+
+
+// ===== HEADER START ===== //
+
+.header
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  background-color: rgba(255, 255, 255, .5)
+
+.header__container
+  flex-wrap: nowrap
+
+.header__logo
+
+.header__logo-img
+  height: 66.75px
+
+.header__nav
+
+.nav__items
+  gap: 25px
+
+.nav__item
+
+.nav__item-link
+  @include adapt-font(22, 18)
+  color: $blue
+  font-weight: 700
+
+
+.contacts
+
+.header__contacts
+  gap: 5px
+
+
+.contacts__link
+  color: $blue
+  display: flex
+  gap: 5px
+  align-items: center
+
+.material-symbols-outlined
+  width: 22px
+  height: 22px
+  color: rgba(124, 119, 223, 0.674)  
+
+
+// ===== HEADER END ===== //
+
+
+// .main
+//   position: relative
+
+// ===== INTRO START ===== //
+
+.intro
+  width: 100%
+  height: 100dvh
+  min-height: 560px
+  background: center / cover no-repeat url('../img/intro_bg.jpg')
+
+.intro__container
+  display: flex
+  align-items: center
+  justify-content: center
+  font-family: $ff
+  min-height: 560px
+
+.intro__content
+  border: 2px solid $blue
+  border-radius: 35px
+  width: 100%
+  max-width: 600px
+  padding-block: 40px
+  padding-inline: 35px
+  align-items: center
+  gap: 20px
+  background-color: rgba(255, 255, 255, .5)
+
+.intro__img
+  display: none
+  width: 100%
+
+.intro__title
+  margin: 0
+  color: $blue
+  @include adapt-font(36, 18)
+  font-weight: 700
+  letter-spacing: 1px
+  text-align: center
+
+.intro__subtitle
+  @include adapt-font(20, 16)
+  font-weight: 400
+  color: $blue 
+  text-align: center
+  
+  & span
+    @include adapt-font(25, 14)
+    font-weight: 700
+
+.intro__button
+  width: 90%
+  text-align: center
+  padding: 15px 10px 
+  background-color: $blue
+  color: $white
+  border-radius: 10px
+  @include adapt-font(22, 14)
+  font-weight: 700
+// ===== INTRO END ===== //
+
+
+// ===== SERVICES START ===== //
+
+.services
+  margin-top: 70px
+
+.services__container
+
+.services__title
+  width: 100%
+  margin-inline: auto
+  padding-block: 5px
+  background-color: $blue
+  text-align: center
+  color: $white
+  font-family: $ff
+  @include adapt-font(48, 22)
+  font-weight: 700
+
+
+.services__info
+  margin-top: 20px
+  display: flex
+  align-items: center
+  flex-direction: column
+    
+
+.accordion__wrapper
+  width: 80%
+  overflow: hidden
+  border-bottom: 1.5px solid $blue 
+  &:first-child
+    border-top: 1.5px solid $blue 
+
+
+
+.accordion
+  cursor: pointer
+  position: relative
+  font-family: $ff
+  width: 100%
+  padding-right: 50px
+  color: $blue
+  @include adapt-font(26, 16)
+  font-weight: 700
+  background-color: transparent
+  text-align: left
+  padding-block: 20px
+
+
+.add
+  position: absolute
+  right: 0
+  top: 26%
+  font-size: 34px
+  width: 35px
+  height: 35px
+  border-radius: 50%
+  // background-color: $blue
+  color: $blue
+  transition: 1s ease all
+
+.add-active
+  color: $white
+  background-color: $blue
+  transform: rotate(45deg)
+
+
+
+
+.panel
+  display: block
+  transition: max-height 1s ease
+
+.text__wrapper
+  padding-bottom: 15px
+  & p
+    font-family: $ff
+    font-size: 1rem
+    font-weight: 300
+    line-height: 1.55
+    color: $dark
+    & a
+      font-weight: 600
+      color: $dark
+  & ul
+    font-family: $ff
+    font-size: 1rem
+    font-weight: 300
+    line-height: 1.55
+    color: $dark
+    & li
+      list-style: inside
+
+// ===== SERVICES END ===== //
+
+// ===== FEEDBACK START ===== //
+
+.feedback
+  margin-top: 70px
+  font-family: $ff
+
+.feedback__container
+  display: flex
+  align-items: center
+  flex-direction: column
+
+.feedback__form
+  width: 100%
+  max-width: 1160px
+  margin-inline: auto
+
+#form 
+  & .row
+    margin-top: 20px
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 40px
+    & input 
+      width: 33%
+      color: $white
+      background-color: rgb(148, 148, 148) 
+      border-radius: 5px
+      font-size: 20px
+      font-weight: 400
+      height: 50px
+      padding-inline: 10px
+    & button
+      padding: 0px 15px
+      font-size: 20px
+      color: $white
+      background-color: $blue
+      font-weight: 600
+      width: 300px
+      height: 50px
+      border-radius: 5px
+
+.form__title
+
+.form__subtitle
+  margin-top: 20px
+  text-align: center
+  font-weight: 700
+  color: $blue
+  font-size: 20px
+
+
+.form__text
+  text-align: center
+  margin-block: 30px
+  color: $blue
+  @include adapt-font(20, 13)
+  line-height: 30px
+  font-weight: 300
+
+.feedback__items
+  width: 100%
+  max-width: 1160px
+  margin-inline: auto
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.feedback__item
+  width: 290px
+  font-size: 25px
+  font-weight: 700
+  text-align: center
+  color: $white
+  background-color: $blue
+  padding-block: 10px
+
+.done
+  color: $white
+  font-size: 28px
+  margin-right: 5px
+  width: 26px
+  height: 26px
+
+// ===== FEEDBACK END ===== //
+
+// ===== TEAM START ===== //
+
+.team
+  margin-top: 70px
+  font-family: 'Roboto',Arial,sans-serif
+
+.team__container
+
+.team__title
+
+
+.team__items
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  flex-wrap: wrap
+  margin-top: 30px
+
+.team__item
+  width: 100%
+  max-width: 360px
+  min-width: 300px
+  & figure
+    & img
+      width: 100%
+  & ul, p
+      line-height: 1.45
+
+.team__item-img
+  width: 100%
+  height: 540px
+  background-image: url('../img/naumchuk.jpg')
+  background-repeat: no-repeat
+  background-position: 35% center
+  background-size: cover
+
+.name
+  margin-top: 20px
+  color: $blue
+  font-size: rem(21)
+  font-weight: 600
+
+.position
+  margin-top: 4px
+  font-size: 18px
+  color: #7A7A7A
+
+.line
+  margin-top: 15px
+  width: 50px
+  height: 2px
+  background-color: $blue
+  
+.team__item-about
+  margin-top: 15px
+
+.team__item-about, .team__item-description-title
+  font-size: 18px
+  line-height: 1.45
+  font-weight: 300
+  color: $dark
+
+.team__item-description-title
+  margin-top: 15px
+  font-weight: 700
+
+.team__item-description
+  & span
+    font-weight: 700
+
+// ===== TEAM END ===== //
+
+
+// ===== PARTNERS START ===== //
+.partners
+  margin-top: 50px
+
+.partners__container
+  font-family: $ff
+
+.partners__title
+
+
+.partners__wrapper
+  width: 100%
+  margin-top: 50px
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-around
+  gap: 50px
+  & figure
+    width: 100%
+    max-width: 200px
+    height: 250px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    gap: 10px
+    & img 
+      width: 100%
+    & figcaption 
+      font-family: $ff
+      text-align: center
+      color: $blue
+      font-size: 1.2rem
+      // margin-top: 10px
+
+// ===== PARTNERS END ===== //
+
+
+// ===== REVIEWS START ===== //
+
+.reviews
+  margin-top: 70px
+
+.reviews__container
+
+.reviews__title
+
+
+//
+.carousel 
+  width: 100%
+  height: 380px
+  position: relative
+
+
+.carousel > ul 
+  margin: 0
+  padding: 0
+  list-style: none
+
+
+.slide 
+  position: absolute
+  inset: 0
+  opacity: 0
+  padding-inline: 50px
+  transition: 200ms opacity ease-in-out
+  transition-delay: 200ms
+  height: 100%
+
+
+.slide > img 
+  display: block
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: center
+
+
+.slide[data-active] 
+  opacity: 1
+  z-index: 1
+  transition-delay: 0ms
+
+
+.carousel-button 
+  position: absolute
+  z-index: 2
+  background: none
+  border: none
+  font-size: 4rem
+  top: 50%
+  height: 24px
+  cursor: pointer
+  background-color: rgba(0, 0, 0, .1)
+  border-radius: 50%
+
+
+.carousel-button.prev 
+  left: 1rem
+
+
+.carousel-button.next 
+  right: 1rem
+
+//
+
+.carousel
+  margin-top: 50px
+  position: relative
+
+.slide-items
+  flex: 0 0 100%
+
+
+
+.slide-item
+  font-family: $ff
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  max-width: 910px
+  margin-inline: auto
+  & img
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    object-fit: cover
+    object-position: center
+  & blockquote
+    @include adapt-font(18, 14)
+    color: $dark
+    text-align: center
+    line-height: 1.55
+  & h5 
+    margin-top: 20px
+    @include adapt-font(22, 14)
+    font-weight: 600
+    line-height: 1.35
+  & p
+    @include adapt-font(16, 12)
+    margin-top: 20px
+
+.carousel__btn
+  position: absolute
+  border-radius: 50%
+  top: 50%
+
+.prev
+  left: 0
+
+.next
+  right: 0
+
+// ===== REVIEWS END ===== //
+
+
+// ===== FOOTER START ===== //
+.footer
+  margin-top: 50px
+  background: linear-gradient(#ffffff, #72769b)
+
+.footer__container
+  justify-content: space-around
+  padding-bottom: 30px
+
+.footer__form
+  width: 100%
+  max-width: 560px
+  & .column
+    margin-top: 20px
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 40px
+    & input, textarea
+      width: 100%
+      color: $white
+      background-color: $white
+      border-radius: 5px
+      font-size: 20px
+      font-weight: 400
+      height: 50px
+      padding-inline: 10px
+    & textarea
+      padding-top: 5px
+      height: 100px
+    & button
+      padding: 0px 15px
+      font-size: 20px
+      color: $white
+      background-color: $blue
+      font-weight: 600
+      width: 100%
+      height: 50px
+      border-radius: 5px
+
+
+.footer__contacts
+  width: 100%
+  max-width: 560px
+  & iframe
+    width: 100% 
+
+.address__title
+
+.footer__links
+  margin-top: 30px
+  display: flex
+  flex-direction: column
+  align-items: center
+  color: $blue
+  font-family: $ff
+
+.contacts__link
+
+.contacts__link-tel, .contacts__link-adress
+  font-size: 24px
+  font-weight: 100
+  color: $blue
+
+.social
+  padding-block: 15px
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 10px
+  & a 
+    & img
+      width: 50px
+      border-radius: 50%
+
+// ===== FOOTER END ===== //
+
+
+
+
+
+
+
+
+
+//----- АДАПТИВ ------//
+
+@media (max-width: 1200px) 
+  .team__items
+    gap: 30px
+  
+
+@media (max-width: 1168px) 
+  #form 
+    width: 70%
+    & .row
+      & input 
+        width: 100%
+
+@media (max-width: 1000px) 
+  .footer, .reviews, .partners, .team, .feedback, .services
+    margin-top: 50px
+  .team__items
+    gap: 50px
+  .feedback__items
+    justify-content: center
+
+@media (max-width: 768px) 
+  div[class$='__container']
+    padding-inline: 15px
+  .header__logo-img
+    width: 75px
+  .header__nav
+    display: none
+  .contacts__link
+    max-width: 204px
+
+  .footer, .reviews, .partners, .team, .feedback, .services
+    margin-top: 40px
+
+
+@media (max-width: 480px) 
+  .intro
+    background: #fff
+  .intro__container
+    padding-top: 50px
+  .intro__content
+    border: none
+  .intro__img
+    display: block
+  .services__title
+    width: 100%
+
+  .accordion__wrapper
+    width: 93%
+
+  .footer, .reviews, .partners, .team, .feedback, .services
+    margin-top: 30px
+
+  .team__item-img
+    // width: 98%
+    height: 450px
+  
+  #form 
+    width: 100%
+    & .row
+      gap: 20px
+  .carousel 
+    height: 530px
