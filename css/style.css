@@ -736,6 +736,7 @@ address {
 .footer__form .column textarea {
   padding-top: 5px;
   height: 100px;
+  resize: none;
 }
 .footer__form .column button {
   padding: 0px 15px;
