@@ -899,6 +899,11 @@ address {
   .carousel {
     height: 300px;
   }
+}
+@media (max-width: 480px) {
+  div[class$=__container] {
+    padding-inline: 5px;
+  }
   .contacts__link {
     padding-right: 10px;
     text-align: right;
@@ -906,11 +911,6 @@ address {
   }
   .contacts__link span {
     display: none;
-  }
-}
-@media (max-width: 480px) {
-  div[class$=__container] {
-    padding-inline: 5px;
   }
   .intro {
     background: #fff;
