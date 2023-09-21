@@ -912,16 +912,11 @@ address {
   div[class$=__container] {
     padding-inline: 5px;
   }
-  .header {
-    position: static;
-  }
   .intro {
     background: #fff;
     height: 100%;
+    min-height: 580px;
     padding-top: 0;
-  }
-  .intro__container {
-    padding-top: 30px;
   }
   .intro__content {
     padding-block: 1px;
