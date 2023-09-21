@@ -821,12 +821,12 @@ address {
 }
 @media (max-width: 767px) {
   .form__sendet {
-    font-size: calc(24px + 40.8 * ((100vw - 320) / 1490));
+    font-size: calc(18px + 51 * ((100vw - 320) / 1490));
   }
 }
 @media (min-width: 315px) {
   .form__sendet {
-    font-size: calc(24px + 24 * (100vw / 1490));
+    font-size: calc(18px + 30 * (100vw / 1490));
   }
 }
 

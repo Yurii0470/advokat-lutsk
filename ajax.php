@@ -10,8 +10,8 @@ foreach ($_POST as $key => $val) {
     $text .= $key . ": " . $val . "\n";
 }
 
-$text .= "\n" . $_SERVER['REMOTE_ADDR'];
-$text .= "\n" . date('d.m.y H:i:s');
+// $text .= "\n" . $_SERVER['REMOTE_ADDR'];
+$text .= "\n" . date('d.m.y H:i:s', time() + 10800);
 
 $param = [
     "chat_id" => $chat_id,

@@ -1,8 +1,6 @@
 const form1 = document.querySelector('.feedback__form');
 const form2 = document.querySelector('.footer__form');
 
-console.dir(form2);
-
 function sendForTelegramForm1(item) {
     $(item).on('submit', function (event) {
 
@@ -64,7 +62,7 @@ function sendForTelegramForm1(item) {
             },
             complete: function() {
                 formSendet.classList.add('visible');
-                console.log('Complete')
+                // console.log('Complete')
                 form.reset() 
                 setTimeout(remoeveVisibleClass, 2000)
             }
