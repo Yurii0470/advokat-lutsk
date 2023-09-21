@@ -20,6 +20,8 @@ h1, h2, h3, h4, h5, h6
 html, body 
   height: 100%
   line-height: 1
+body 
+  position: relative
 
 // TO %
 @function prc($pxOne, $pxTwo) 
@@ -154,16 +156,12 @@ address
 // ===== HEADER END ===== //
 
 
-// .main
-//   position: relative
-
 // ===== INTRO START ===== //
 
 .intro
-  padding-top: 85px
   width: 100%
   height: 100dvh
-  min-height: 620px
+  min-height: 100%
   background: center / cover no-repeat url('../img/intro_bg.jpg')
 
 .intro__container
@@ -171,18 +169,19 @@ address
   align-items: center
   justify-content: center
   font-family: $ff
-  // min-height: 560px
+  height: inherit
 
 .intro__content
   border: 2px solid $blue
   border-radius: 35px
   width: 100%
-  max-width: 600px
-  // padding-block: 40px
-  padding-inline: 35px
+  max-width: 580px
+  padding-block: 40px
+  padding-inline: 25px
   align-items: center
   gap: 20px
   background-color: rgba(255, 255, 255, .5)
+  backdrop-filter: blur(1px)
 
 .intro__img
   display: none
@@ -209,7 +208,7 @@ address
   font-weight: 400
   color: $blue 
   text-align: center
-  
+  line-height: 1.55
   & span
     @include adapt-font(25, 14)
     font-weight: 700
@@ -424,6 +423,7 @@ address
   flex-direction: row
   justify-content: space-around
   flex-wrap: wrap
+  gap: 15px
   margin-top: 30px
 
 .team__item
@@ -528,7 +528,6 @@ address
 .reviews__container
 
 .reviews__title
-
 
 //
 .carousel 
@@ -638,6 +637,7 @@ address
 .footer
   margin-top: 50px
   background: linear-gradient(#ffffff, #72769b)
+  font-family: $ff
 
 .footer__container
   justify-content: space-around
@@ -652,10 +652,10 @@ address
     display: flex
     flex-wrap: wrap
     justify-content: center
-    gap: 40px
+    gap: 20px
     & input, textarea
       width: 100%
-      color: $white
+      color: $dark
       background-color: $white
       border-radius: 5px
       font-size: 20px
@@ -714,6 +714,29 @@ address
 // ===== FOOTER END ===== //
 
 
+.form__sendet
+  padding: 10% 5%
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100dvh
+  font-family: $ff
+  @include adapt-font(48, 24)
+  text-align: center
+  font-weight: 700
+  line-height: 2
+  z-index: 999
+  align-items: center
+  justify-content: center
+  background-color: #25698ec0
+  display: none
+  backdrop-filter: blur(15px)
+
+.visible
+  display: flex
+  
+
 
 
 
@@ -722,6 +745,10 @@ address
 
 
 //----- АДАПТИВ ------//
+
+@media (min-width: 1440px) and (max-width: 2560px)
+  .intro__content
+    max-width: 750px
 
 @media (max-width: 1200px) 
   .team__items
@@ -752,6 +779,8 @@ address
     padding-inline: 15px
   // .header__logo-img
   //   width: 75px
+  .header
+    position: static
   .header__nav
     display: none
   .contacts__link
@@ -760,26 +789,42 @@ address
     & .row
       & button
         width: 100%
+  .intro
+    height: 100%
+    min-height: 400px
+    &__container
+      height: inherit
+      min-height: inherit
 
   .footer, .reviews, .partners, .team, .feedback, .services
     margin-top: 40px
   .carousel 
     height: 300px
+  .contacts__link
+    padding-right: 10px
+    text-align: right
+    justify-content: end
+    & span
+      display: none
 
 
 @media (max-width: 480px) 
   div[class$='__container']
     padding-inline: 5px
   .header__logo-img
+  .header
+    position: static
     
   .intro
     background: #fff
     height: 100%
+    // max-height: 500px
+    padding-top: 0
   .intro__container
     // height: 100%
-    // padding-top: 100px
+    padding-top: 30px
   .intro__content
-    // margin-top: 100px
+    padding-block: 1px
     padding-inline: 10px
     border: none
     background-color: transparent

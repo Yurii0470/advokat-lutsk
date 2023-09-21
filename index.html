@@ -533,9 +533,9 @@
         <h3 class="form__title">Професійна консультація юриста</h3>
         <p class="form__subtitle">Замовити попередню безкоштовну консультацію</p>
         <div class="column">
-          <input type="text" placeholder="Ваше ім'я">
-          <input type="text" placeholder="Телефон">
-          <textarea name="Message" type="textarea" placeholder="Напишіть соє питання"></textarea>
+          <input type="text" name="name" placeholder="Ваше ім'я">
+          <input type="text" name="phone" placeholder="Телефон">
+          <textarea name="message" type="textarea" placeholder="Напишіть соє питання"></textarea>
           <button type="submit">Замовити консультацію</button>
         </div>
         <p class="form__text">Зателефонуємо до Вас протягом 5 - 30 хвилин</p>
@@ -558,12 +558,21 @@
       </div>
     </div>
   </footer>
+  <section class="form__sendet">
+    <p class="form__sendet-text">Дякуємо за Ваше звернення, очікуйте на зворотній зв'язок</p>
+  </section>
   
-
+  <!-- Скрипт сайту -->
   <script src="js/script.js"></script>
+
+  <!-- Анімації -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
+
+  <!-- Відправка форми в Телеграм -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>
