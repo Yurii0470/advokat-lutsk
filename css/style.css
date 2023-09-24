@@ -88,6 +88,8 @@ address {
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   font-family: "Roboto", "Arial", sans-serif;
 }
 
@@ -139,8 +141,8 @@ address {
 .intro {
   width: 100%;
   height: 100dvh;
-  min-height: 100%;
-  background: center/cover no-repeat url("../img/intro_bg.jpg");
+  min-height: 450px;
+  background: center/cover no-repeat url("../img/1bg.jpg");
 }
 
 .intro__container {
@@ -148,7 +150,7 @@ address {
   align-items: center;
   justify-content: center;
   font-family: "Roboto", "Arial", sans-serif;
-  height: inherit;
+  height: 100%;
 }
 
 .intro__content {
@@ -494,6 +496,15 @@ address {
   background-size: cover;
 }
 
+.team__item-img2 {
+  width: 100%;
+  height: 540px;
+  background-image: url("../img/mohnyk.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 72%;
+  background-size: 140%;
+}
+
 .name {
   margin-top: 20px;
   color: #172a57;
@@ -567,7 +578,7 @@ address {
 .partners__wrapper figure figcaption {
   font-family: "Roboto", "Arial", sans-serif;
   text-align: center;
-  color: #172a57;
+  color: #333;
   font-size: 1.2rem;
 }
 
@@ -575,39 +586,30 @@ address {
   margin-top: 70px;
 }
 
-.carousel {
+.slider-container {
   width: 100%;
-  height: 250px;
+  max-width: 1300px;
+  margin-inline: auto;
+  overflow: hidden;
   position: relative;
+  margin-top: 50px;
 }
 
-.carousel__items {
-  height: 100%;
+.slides {
+  display: flex;
+  width: 100%;
+  /* gap: 20px */ 
+  transition: transform 0.3s ease-in-out;
 }
 
 .slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  padding-inline: 50px;
-  transition: 200ms opacity ease-in-out;
-  transition-delay: 200ms;
-}
-
-.slide > img {
-  display: block;
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-
-.slide[data-active] {
-  opacity: 1;
-  z-index: 1;
-  transition-delay: 0ms;
+  /* max-width: 500px */
+  min-width: 33.3333333333%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding-inline: 50px;
 }
 
 .carousel-button {
@@ -621,14 +623,6 @@ address {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-}
-
-.carousel-button.prev {
-  left: 1rem;
-}
-
-.carousel-button.next {
-  right: 1rem;
 }
 
 .carousel {
@@ -659,6 +653,7 @@ address {
      object-position: center;
 }
 .slide-item blockquote {
+  margin-top: 25px;
   color: #333;
   text-align: center;
   line-height: 1.55;
@@ -702,12 +697,6 @@ address {
   }
 }
 
-.carousel__btn {
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-}
-
 .prev {
   left: 0;
 }
@@ -716,22 +705,22 @@ address {
   right: 0;
 }
 
-.footer {
+.find-as {
   margin-top: 50px;
   background: linear-gradient(#ffffff, #72769b);
   font-family: "Roboto", "Arial", sans-serif;
 }
 
-.footer__container {
+.find-as__container {
   justify-content: space-around;
   padding-bottom: 30px;
 }
 
-.footer__form {
+.find-as__form {
   width: 100%;
   max-width: 560px;
 }
-.footer__form .column {
+.find-as__form .column {
   margin-top: 20px;
   width: 100%;
   display: flex;
@@ -739,7 +728,7 @@ address {
   justify-content: center;
   gap: 20px;
 }
-.footer__form .column input, .footer__form .column textarea {
+.find-as__form .column input, .find-as__form .column textarea {
   width: 100%;
   color: #333;
   background-color: #fff;
@@ -749,12 +738,12 @@ address {
   height: 50px;
   padding-inline: 10px;
 }
-.footer__form .column textarea {
+.find-as__form .column textarea {
   padding-top: 5px;
   height: 100px;
   resize: none;
 }
-.footer__form .column button {
+.find-as__form .column button {
   padding: 0px 15px;
   font-size: 20px;
   color: #fff;
@@ -765,15 +754,15 @@ address {
   border-radius: 5px;
 }
 
-.footer__contacts {
+.find-as__contacts {
   width: 100%;
   max-width: 560px;
 }
-.footer__contacts iframe {
+.find-as__contacts iframe {
   width: 100%;
 }
 
-.footer__links {
+.find-as__links {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -834,6 +823,23 @@ address {
   display: flex;
 }
 
+footer {
+  width: 100%;
+  height: 90%;
+  background-image: url(../img/footer_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 25%;
+}
+
+.object-pos {
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: 10% 25%;
+     object-position: 10% 25%;
+}
+
 @media (min-width: 1440px) and (max-width: 2560px) {
   .intro__content {
     max-width: 750px;
@@ -856,7 +862,7 @@ address {
   }
 }
 @media (max-width: 1000px) {
-  .footer, .reviews, .partners, .team, .feedback, .services {
+  .find-as, .reviews, .partners, .team, .feedback, .services {
     margin-top: 50px;
   }
   .team__items {
@@ -867,6 +873,9 @@ address {
   }
   .carousel {
     height: 250px;
+  }
+  footer {
+    height: 43%;
   }
 }
 @media (max-width: 768px) {
@@ -886,14 +895,9 @@ address {
     width: 100%;
   }
   .intro {
-    height: 100%;
     min-height: 400px;
   }
-  .intro__container {
-    height: inherit;
-    min-height: inherit;
-  }
-  .footer, .reviews, .partners, .team, .feedback, .services {
+  .find-as, .reviews, .partners, .team, .feedback, .services {
     margin-top: 40px;
   }
   .carousel {
@@ -918,11 +922,17 @@ address {
   .contacts__link span {
     display: none;
   }
+  .find-as__contacts iframe {
+    height: 250px !important;
+  }
   .intro {
     background: #fff;
-    height: 100%;
-    min-height: 590px;
+    height: 0;
+    min-height: 600px;
     padding-top: 20px;
+  }
+  .intro__container {
+    display: block;
   }
   .intro__content {
     padding-block: 1px;
@@ -932,6 +942,11 @@ address {
   }
   .intro__img {
     display: block;
+    height: 250px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 0% 34%;
+       object-position: 0% 34%;
   }
   .intro__img-wrapper {
     display: flex;
@@ -942,7 +957,7 @@ address {
   .accordion__wrapper {
     width: 93%;
   }
-  .footer, .reviews, .partners, .team, .feedback, .services {
+  .find-as, .reviews, .partners, .team, .feedback, .services {
     margin-top: 30px;
   }
   .team__item-img {
@@ -960,7 +975,10 @@ address {
   .contacts__link-adress {
     text-align: center;
   }
-  .footer__container {
+  .find-as__container {
     padding-top: 30px;
+  }
+  footer {
+    height: 27%;
   }
 }/*# sourceMappingURL=style.css.map */

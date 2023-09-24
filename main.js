@@ -1,5 +1,5 @@
 const form1 = document.querySelector('.feedback__form');
-const form2 = document.querySelector('.footer__form');
+const form2 = document.querySelector('.find-as__form');
 
 function sendForTelegramForm1(item) {
     $(item).on('submit', function (event) {

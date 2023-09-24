@@ -21,7 +21,7 @@
         <ul class="row nav__items">
           <li class="nav__item"><a href="#services" class="nav__item-link">Послуги</a></li>
           <li class="nav__item"><a href="#reviews" class="nav__item-link">Відгуки</a></li>
-          <li class="nav__item"><a href="#footer__contacts" class="nav__item-link">Контакти</a></li>
+          <li class="nav__item"><a href="#find-as__contacts" class="nav__item-link">Контакти</a></li>
         </ul>
       </nav>
       <address class="contacts column header__contacts">
@@ -53,7 +53,7 @@
           <img src="img/3.png" alt="">
           <img src="img/2.png" alt="">
         </div>
-        <a class="intro__button" href="#footer__contacts">Замовити консультацію</a>
+        <a class="intro__button" href="#find-as">Замовити консультацію</a>
       </div>
     </div>
   </section>
@@ -416,6 +416,7 @@
             <li>- Повний супровід справ про адміністративні правопорушення.</li>
           </ul>
         </li>
+
         <li class="team__item">
           <figure>
             <img src="img/nataliia.jpg" alt="nataliia">
@@ -468,6 +469,33 @@
           <p class="team__item-description"><span>Спеціалізація:</span> кримінальні справи та процес, справи про адміністративні правопорушення. Захист та представництво підозрюваних/обвинувачених та потерпілих/свідків.</p> <br>
           <p class="team__item-description"><span>Участь в проведенні оглядів, обшуків.</span><br>Повний супровід та захист в справах про умовно-дострокові звільнення, заміну невідбутої частини покарання більш м'яким. Адвокат у військових справах.</p>
         </li>
+        <!--  Нові співробітники -->
+        <li class="team__item">
+          <figure>
+            <img src="img/dariya.jpg" alt="dariya">
+            <figcaption>
+              <p class="name">Варвашеніна Дарія</p>
+              <p class="position">SMM менеджер</p>
+              <div class="line"></div>
+            </figcaption>
+          </figure>
+          <p class="team__item-about">координатор усіх процесів та комунікацій у компанії</p><br>
+        </li>
+
+        <li class="team__item">
+          <figure>
+            <div class="team__item-img2"></div>
+            <!-- <img class="object-pos" src="img/mohnyk.jpg" alt="mohnyk"> -->
+            <figcaption>
+              <p class="name">Тетяна Мохнюк</p>
+              <p class="position">Юрист</p>
+              <div class="line"></div>
+            </figcaption>
+          </figure>
+          <p class="team__item-about">3 років стажу помічника фдвоката в юридичній компанії</p><br>
+          <p class="team__item-description"><span>Спеціалізація:</span> сімейне тф цивільне право, кредитні питання, банкруцтво фізичних осіб</p>
+        </li>
+
       </ul>
     </div>
   </section>
@@ -490,12 +518,46 @@
   <section class="reviews" id="reviews">
     <div class="reviews__container">
       <h3 class="reviews__title">Відгуки</h3>
-      <div class="carousel" data-carousel>
-        <button class="carousel-button prev" data-carousel-button="prev">
-          <img src="icons/chevron_lef.svg" alt="chevron_lef">
+
+      <div class="slider-container">
+        <ul data-slides class="carousel__items slides">
+          
+          <li class="slide" data-active>
+            <div class="slide-item">
+              <img src="img/klient1.jpg" alt="klient">
+              <blockquote>Зверталась до Вікторії по допомогу у розлученні. Вона допомогла швидко підготувати усі необхідні документи для розірвання шлюбу та поділу майна, а також представляла мої інтереси у суді. Завдяки підтримці такого кваліфікованого та уважного юриста, увесь процес пройшов дуже швидко. Дякую Вікторії за її роботу та професіоналізм!</blockquote>
+              <h5>Долотова Галина</h5>
+              <p>агент з нерухомості</p>
+            </div>
+          </li>
+          <li class="slide">
+            <div class="slide-item">
+              <img src="img/klient2.jpg" alt="klient">
+              <blockquote>Наша маркетингова агенція постійно підписує договори із клієнтами. Для кожного створюється свій договір із переліком та обсягом необхідних послуг та додатковими бюджетами на маркетингові активності. Завдяки Вікторії ми завжди впевнені, що усі документи складені правильно та захищають як нас, так і наших клієнтів. Дякуємо за швидку та якісну роботу!</blockquote>
+              <h5>Анна Рудень</h5>
+              <p>керівник маркетингової агенції</p>
+            </div>
+          </li>
+          <li class="slide">
+            <div class="slide-item">
+              <img src="img/klient3.jpg" alt="klient">
+              <blockquote>Нещодавно потрапив у ДТП, тому терміново була потрібна допомога юриста. Одразу зателефонував Вікторії. Вона надала консультацію стосовно необхідних дій для швидкого урегулювання справи, перерахувала перелік документів, які потрібно скласти на місці події, та допомогла подати документи у страхову для відшкодування збитків. Дуже вдячний за оперативність та уважність до моєї справи.</blockquote>
+              <h5>Роман Коломієць</h5>
+              <p>приватний підприємець</p>
+            </div>
+          </li>
+    
+        </ul>
+        <button class="carousel-button prev" onclick="prevSlide()">
+          <img src="icons/chevron_lef.svg">
         </button>
-        <button class="carousel-button next" data-carousel-button="next">
+        <button class="carousel-button next" onclick="nextSlide()">
           <img src="icons/chevron_righ.svg" alt="chevron_righ">
+        </button>
+      </div>
+
+      <!-- <div class="carousel" data-carousel>
+        
         </button>
         <ul data-slides class="carousel__items">
           <li class="slide" data-active>
@@ -523,12 +585,12 @@
             </div>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </section>
-  <footer class="footer" id="footer">
-    <div class="row footer__container">
-      <form id="form footer__form" class="footer__form" action="" data-aos="zoom-in">
+  <section class="find-as" id="find-as">
+    <div class="row find-as__container">
+      <form id="form find-as__form" class="find-as__form" action="" data-aos="zoom-in">
         <h3 class="form__title">Професійна консультація адвоката</h3>
         <p class="form__subtitle">Замовити попередню безкоштовну консультацію</p>
         <div class="column">
@@ -541,10 +603,10 @@
           (у робочий час)
         </p>
       </form>
-      <div id="footer__contacts" class="footer__contacts" data-aos="zoom-in">
+      <div id="find-as__contacts" class="find-as__contacts" data-aos="zoom-in">
         <address>
           <h4 class="address__title">Контакти:</h4>
-          <div class="footer__links">
+          <div class="find-as__links">
             <a class="contacts__link-tel" href="tel:+380984053342">+38 098 405 33 42</a> <br>
             <a class="contacts__link-adress" href="https://www.google.com/maps/dir//%D0%AE%D1%80%D0%B8%D1%81%D1%82+%D0%92%D1%96%D0%BA%D1%82%D0%BE%D1%80%D1%96%D1%8F+%D0%94%D0%BE%D0%BC%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B0,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A8%D0%BE%D0%BF%D0%B5%D0%BD%D0%B0,+22,+%D0%9B%D1%83%D1%86%D1%8C%D0%BA,+%D0%92%D0%BE%D0%BB%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+43000/@50.751108,25.3389832,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x472599bb32f635bd:0x280092b662c471c7!2m2!1d25.3389832!2d50.751108">м.Луцьк, вул. Шопена 22, офіс 61</a>
           </div>
@@ -555,10 +617,11 @@
           <a href="https://m.facebook.com/p/Viktoria-Domanskaya-100004758093162/?wtsid=rdr_0ivzitQVZXAICgr46&_rdr"><img src="img/facebook.png" alt="facebook"></a>
           <a href="https://t.me/Viktoria_Domanska"><img src="img/telegram.png" alt="telegram"></a>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.3193801944813!2d25.33640827627338!3d50.7511113656706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472599bb32f635bd%3A0x280092b662c471c7!2z0K7RgNC40LTQuNGH0L3QsCDQutC-0LzQv9Cw0L3RltGPIMKr0J_RgNCw0LLQvtCy0LAg0JTQvtC_0L7QvNC-0LPQsCDihJYxwrsg0K7RgNC40YHRgiDQm9GD0YbRjNC6LiDQkNC00LLQvtC60LDRgtC4INCb0YPRhtGM0Lou!5e0!3m2!1suk!2sua!4v1694869814046!5m2!1suk!2sua" width="480" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.3193801944813!2d25.33640827627338!3d50.7511113656706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472599bb32f635bd%3A0x280092b662c471c7!2z0K7RgNC40LTQuNGH0L3QsCDQutC-0LzQv9Cw0L3RltGPIMKr0J_RgNCw0LLQvtCy0LAg0JTQvtC_0L7QvNC-0LPQsCDihJYxwrsg0K7RgNC40YHRgiDQm9GD0YbRjNC6LiDQkNC00LLQvtC60LDRgtC4INCb0YPRhtGM0Lou!5e0!3m2!1suk!2sua!4v1694869814046!5m2!1suk!2sua" width="560" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
-  </footer>
+  </section>
+  <footer></footer>
   <section class="form__sendet">
     <p class="form__sendet-text">Дякуємо за Ваше звернення,<br> очікуйте на зворотній зв'язок</p>
   </section>

@@ -110,7 +110,8 @@ address
   top: 0
   left: 0
   width: 100%
-  background-color: rgba(255, 255, 255, .5)
+  background-color: rgba(255, 255, 255, .5) 
+  backdrop-filter: blur(5px)
   font-family: $ff
 
 .header__container
@@ -161,15 +162,15 @@ address
 .intro
   width: 100%
   height: 100dvh
-  min-height: 100%
-  background: center / cover no-repeat url('../img/intro_bg.jpg')
+  min-height: 450px
+  background: center / cover no-repeat url('../img/1bg.jpg')
 
 .intro__container
   display: flex
   align-items: center
   justify-content: center
   font-family: $ff
-  height: inherit
+  height: 100%
 
 .intro__content
   border: 2px solid $blue
@@ -444,6 +445,15 @@ address
   background-position: 35% center
   background-size: cover
 
+.team__item-img2
+  width: 100%
+  height: 540px
+  background-image: url('../img/mohnyk.jpg')
+  background-repeat: no-repeat
+  background-position: 50% 72%
+  background-size: 140%
+    
+
 .name
   margin-top: 20px
   color: $blue
@@ -513,7 +523,7 @@ address
     & figcaption 
       font-family: $ff
       text-align: center
-      color: $blue
+      color: $dark
       font-size: 1.2rem
       // margin-top: 10px
 
@@ -530,37 +540,65 @@ address
 .reviews__title
 
 //
-.carousel 
-  width: 100%
-  height: 250px
-  position: relative
+// .carousel 
+//   width: 100%
+//   height: 250px
+//   position: relative
 
-.carousel__items
-  height: 100%
+// .carousel__items
+//   height: 100%
+
+// .slide 
+//   position: absolute
+//   inset: 0
+//   opacity: 0
+//   padding-inline: 50px
+//   transition: 200ms opacity ease-in-out
+//   transition-delay: 200ms
+//   // height: 100%
+
+
+// .slide > img 
+//   display: block
+//   width: 100%
+//   height: 100%
+//   object-fit: cover
+//   object-position: center
+
+
+// .slide[data-active] 
+//   opacity: 1
+//   z-index: 1
+//   transition-delay: 0ms
+
+//
+
+.slider-container 
+  width: 100%
+  max-width: 1300px
+  margin-inline: auto
+  overflow: hidden
+  position: relative
+  margin-top: 50px
+
+
+.slides 
+  display: flex
+  width: 100%
+  /* gap: 20px */ 
+  transition: transform 0.3s ease-in-out
+
 
 .slide 
-  position: absolute
-  inset: 0
-  opacity: 0
-  padding-inline: 50px
-  transition: 200ms opacity ease-in-out
-  transition-delay: 200ms
-  // height: 100%
-
-
-.slide > img 
-  display: block
   width: 100%
-  height: 100%
-  object-fit: cover
-  object-position: center
+  /* max-width: 500px */
+  min-width: calc(100% / 3)
+  box-sizing: border-box
+  flex-shrink: 0
+  box-sizing: border-box
+  padding-inline: 50px
 
-
-.slide[data-active] 
-  opacity: 1
-  z-index: 1
-  transition-delay: 0ms
-
+//
 
 .carousel-button 
   position: absolute
@@ -575,12 +613,6 @@ address
   border-radius: 50%
 
 
-.carousel-button.prev 
-  left: 1rem
-
-
-.carousel-button.next 
-  right: 1rem
 
 //
 
@@ -606,6 +638,7 @@ address
     object-fit: cover
     object-position: center
   & blockquote
+    margin-top: 25px
     @include adapt-font(18, 14)
     color: $dark
     text-align: center
@@ -619,11 +652,6 @@ address
     @include adapt-font(16, 12)
     margin-top: 20px
 
-.carousel__btn
-  position: absolute
-  border-radius: 50%
-  top: 50%
-
 .prev
   left: 0
 
@@ -633,17 +661,17 @@ address
 // ===== REVIEWS END ===== //
 
 
-// ===== FOOTER START ===== //
-.footer
+// ===== find-as START ===== //
+.find-as
   margin-top: 50px
   background: linear-gradient(#ffffff, #72769b)
   font-family: $ff
 
-.footer__container
+.find-as__container
   justify-content: space-around
   padding-bottom: 30px
 
-.footer__form
+.find-as__form
   width: 100%
   max-width: 560px
   & .column
@@ -677,15 +705,16 @@ address
       border-radius: 5px
 
 
-.footer__contacts
+.find-as__contacts
   width: 100%
   max-width: 560px
   & iframe
     width: 100% 
 
+
 .address__title
 
-.footer__links
+.find-as__links
   margin-top: 30px
   display: flex
   flex-direction: column
@@ -711,7 +740,7 @@ address
       width: 50px
       border-radius: 50%
 
-// ===== FOOTER END ===== //
+// ===== find-as END ===== //
 
 
 .form__sendet
@@ -736,10 +765,20 @@ address
 .visible
   display: flex
   
+footer
+  width: 100%
+  height: 90%
+  // max-height: 500px
+  // min-height: 250px
+  background-image: url(../img/footer_bg.jpg)
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: 0% 25%
 
-
-
-
+.object-pos
+  display: block
+  object-fit: contain
+  object-position: 10% 25%
 
 
 
@@ -765,7 +804,7 @@ address
         width: 100%
 
 @media (max-width: 1000px) 
-  .footer, .reviews, .partners, .team, .feedback, .services
+  .find-as, .reviews, .partners, .team, .feedback, .services
     margin-top: 50px
   .team__items
     gap: 50px
@@ -773,6 +812,8 @@ address
     justify-content: center
   .carousel 
     height: 250px
+  footer
+    height: 43%
 
 @media (max-width: 768px) 
   div[class$='__container']
@@ -790,13 +831,14 @@ address
       & button
         width: 100%
   .intro
-    height: 100%
+
     min-height: 400px
     &__container
-      height: inherit
-      min-height: inherit
+      // display: block
+      // height: inherit
+      // min-height: inherit
 
-  .footer, .reviews, .partners, .team, .feedback, .services
+  .find-as, .reviews, .partners, .team, .feedback, .services
     margin-top: 40px
   .carousel 
     height: 300px
@@ -807,6 +849,8 @@ address
   .feedback__item
     padding-left: 20px
     text-align: left
+
+
 @media (max-width: 480px) 
   div[class$='__container']
     padding-inline: 5px
@@ -817,13 +861,18 @@ address
     justify-content: end
     & span
       display: none
+  .find-as__contacts
+    & iframe
+      height: 250px !important
     
   .intro
     background: #fff
-    height: 100%
-    min-height: 590px
+    // height: 100%
+    height: 0
+    min-height: 600px
     padding-top: 20px
   .intro__container
+    display: block
     // height: 100%
     // padding-top: 30px
   .intro__content
@@ -833,6 +882,9 @@ address
     background-color: transparent
   .intro__img
     display: block
+    height: 250px
+    object-fit: cover
+    object-position: 0% 34%
   .intro__img-wrapper
     display: flex
   .services__title
@@ -841,7 +893,7 @@ address
   .accordion__wrapper
     width: 93%
 
-  .footer, .reviews, .partners, .team, .feedback, .services
+  .find-as, .reviews, .partners, .team, .feedback, .services
     margin-top: 30px
 
   .team__item-img
@@ -856,5 +908,7 @@ address
     height: 450px
   .contacts__link-adress
     text-align: center
-  .footer__container
+  .find-as__container
     padding-top: 30px
+  footer
+    height: 27%
