@@ -58,7 +58,7 @@ function sendForTelegramForm1(item) {
                 return myXhr;
             },
             error: function( jqXHR, textStatus ) {
-                // Тут выводим ошибку
+                // Тут выводим помилку
             },
             complete: function() {
                 formSendet.classList.add('visible');
@@ -129,11 +129,11 @@ function sendForTelegramForm2(item) {
                 return myXhr;
             },
             error: function( jqXHR, textStatus ) {
-                // Тут выводим ошибку
+                // Тут выводим помилку
             },
             complete: function() {
                 formSendet.classList.add('visible');
-                console.log('Complete')
+                // console.log('Complete')
                 form.reset() 
                 setTimeout(remoeveVisibleClass, 2000)
             }
