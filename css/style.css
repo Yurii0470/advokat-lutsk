@@ -895,6 +895,7 @@ footer {
   }
   footer {
     height: 43%;
+    min-height: 300px;
   }
 }
 @media (max-width: 768px) {
@@ -921,6 +922,9 @@ footer {
   }
   .carousel {
     height: 300px;
+  }
+  footer {
+    min-height: 227px;
   }
 }
 @media (max-width: 610px) {
@@ -999,5 +1003,6 @@ footer {
   }
   footer {
     height: 27%;
+    min-height: 185px;
   }
 }/*# sourceMappingURL=style.css.map */
