@@ -1,20 +1,5 @@
 const form1 = document.querySelector('.feedback__form');
 const form2 = document.querySelector('.find-as__form');
-const phones = document.querySelectorAll('#phone');
-
-phones.forEach( (phone) => {
-    phone.addEventListener('focus', function() {
-        if (this.value === '') {
-            this.value = '+380';
-        }
-    });
-    phone.addEventListener('blur', function() {
-        if (this.value === '+380') {
-            this.value = '';
-        }
-    });
-})
-
 
 function sendForTelegramForm1(item) {
     $(item).on('submit', function (event) {
