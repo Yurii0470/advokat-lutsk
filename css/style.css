@@ -398,6 +398,7 @@ address {
   padding-inline: 10px;
 }
 #form .row button {
+  cursor: pointer;
   padding: 0px 15px;
   font-size: 20px;
   color: #fff;
@@ -744,6 +745,7 @@ address {
   resize: none;
 }
 .find-as__form .column button {
+  cursor: pointer;
   padding: 0px 15px;
   font-size: 20px;
   color: #fff;

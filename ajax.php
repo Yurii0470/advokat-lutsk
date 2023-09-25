@@ -1,8 +1,8 @@
 <?php
 // Токен телеграм бота
-$tg_bot_token = "6363914849:AAEdDB10_1bw8a9TVeWlI9Xqtr23hpiql8c";
+$tg_bot_token = "5657126897:AAEepTIqyagOL9UH0zNIFWj6aNf9cyhoCPA";
 // ID Чата
-$chat_id = "-4051748926";
+$chat_id = "-4043308070";
 
 $text = '';
 

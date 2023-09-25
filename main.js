@@ -1,5 +1,20 @@
 const form1 = document.querySelector('.feedback__form');
 const form2 = document.querySelector('.find-as__form');
+const phones = document.querySelectorAll('#phone');
+
+phones.forEach( (phone) => {
+    phone.addEventListener('focus', function() {
+        if (this.value === '') {
+            this.value = '+380';
+        }
+    });
+    phone.addEventListener('blur', function() {
+        if (this.value === '+380') {
+            this.value = '';
+        }
+    });
+})
+
 
 function sendForTelegramForm1(item) {
     $(item).on('submit', function (event) {
@@ -15,7 +30,7 @@ function sendForTelegramForm1(item) {
     
     
         $('.submit', form).val('Отправка...');
-        $('input, textarea', form).attr('disabled','');
+        // $('input, textarea', form).attr('disabled','');
     
         data.append( 'name', 		$('[name="name"]', form).val() );
         data.append( 'phone', 		$('[name="phone"]', form).val() );
@@ -67,6 +82,7 @@ function sendForTelegramForm1(item) {
                 setTimeout(remoeveVisibleClass, 4000)
             }
         });
+        counter++;
     
         return false;
     });
@@ -85,7 +101,7 @@ function sendForTelegramForm2(item) {
     
     
         $('.submit', form).val('Отправка...');
-        $('input, textarea', form).attr('disabled','');
+        // $('input, textarea', form).attr('disabled','');
     
         data.append( 'name', 		$('[name="name"]', form).val() );
         data.append( 'phone', 		$('[name="phone"]', form).val() );
@@ -138,10 +154,11 @@ function sendForTelegramForm2(item) {
                 setTimeout(remoeveVisibleClass, 4000)
             }
         });
-    
+        counter2++;
         return false;
     });
 }
 
 sendForTelegramForm1(form1);
 sendForTelegramForm2(form2);
+
