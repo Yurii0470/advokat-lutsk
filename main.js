@@ -64,7 +64,7 @@ function sendForTelegramForm1(item) {
                 formSendet.classList.add('visible');
                 // console.log('Complete')
                 form.reset() 
-                setTimeout(remoeveVisibleClass, 2000)
+                setTimeout(remoeveVisibleClass, 4000)
             }
         });
     
@@ -135,7 +135,7 @@ function sendForTelegramForm2(item) {
                 formSendet.classList.add('visible');
                 // console.log('Complete')
                 form.reset() 
-                setTimeout(remoeveVisibleClass, 2000)
+                setTimeout(remoeveVisibleClass, 4000)
             }
         });
     
