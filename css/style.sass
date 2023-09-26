@@ -794,9 +794,7 @@ footer
   background-position: 0% 25%
 
 .object-pos
-  display: block
-  object-fit: contain
-  object-position: 10% 25%
+  object-position: 10% 10%
 
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -807,7 +805,39 @@ input[type="number"]::-webkit-outer-spin-button
 input[type="number"]
   appearance: none
 
+.team__item
+  &:last-child
+    width: 200%
+    max-width: 500px
 
+.team__item-container
+  display: flex
+  justify-content: space-between
+.team__item-container-left, .team__item-container-right
+  width: 47.5%
+  & figure
+    position: relative
+    & img
+      object-fit: contain
+    .name
+      margin-top: 0
+      display: block
+      width: 100%
+      padding-block: 6px
+      padding-left: 10px
+      position: absolute
+      top: 78%
+      left: 0px
+      @include adapt-font(20, 12)
+      color: $white
+      backdrop-filter: blur(10px)
+    & figcaption
+      & .position
+        margin-top: 22px
+      // position: absolute
+      // bottom: 20px
+      // left: 10px
+      // width: 100%
 
 
 //----- АДАПТИВ ------//
@@ -842,6 +872,10 @@ input[type="number"]
   footer
     height: 43%
     min-height: 300px
+  .team__item-container-left, .team__item-container-right
+    & figure
+      .name
+        top: 79%
 
 @media (max-width: 768px) 
   div[class$='__container']
@@ -872,6 +906,11 @@ input[type="number"]
     height: 300px
   footer
     min-height: 227px
+
+  .team__item-container-left, .team__item-container-right
+    & figure
+      .name
+        top: 80%
   
 
 
@@ -943,3 +982,20 @@ input[type="number"]
   footer
     height: 27%
     min-height: 185px
+
+  .team__item-container
+    flex-direction: column
+    align-items: center
+  .team__item-container-left, .team__item-container-right
+    width: 100%
+    max-width: 360px
+    & figure
+      .name
+        width: 100%
+        top: 85%
+        padding-left: 15px
+        padding-block: 6px
+        left: 0px
+        @include adapt-font(28, 16)
+        color: $white
+        
