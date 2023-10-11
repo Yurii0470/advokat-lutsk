@@ -9,14 +9,8 @@ acc.forEach(accButton => {
 
     accButton.nextElementSibling.hasAttribute('hidden')? accButton.nextElementSibling.removeAttribute('hidden'): accButton.nextElementSibling.setAttribute('hidden', '');
     e.target.children[0].classList.toggle('add-active');
-    // add.classList.toggle('add-active');
   });
 });
-
-
-
-
-
 
 //Slider
 let currentIndex = 0;
