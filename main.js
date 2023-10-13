@@ -67,8 +67,6 @@ function sendForTelegramForm1(item) {
                 setTimeout(remoeveVisibleClass, 4000)
             }
         });
-        counter++;
-    
         return false;
     });
 }
@@ -139,7 +137,6 @@ function sendForTelegramForm2(item) {
                 setTimeout(remoeveVisibleClass, 4000)
             }
         });
-        counter2++;
         return false;
     });
 }
